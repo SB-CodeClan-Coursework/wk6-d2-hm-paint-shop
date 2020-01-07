@@ -7,8 +7,8 @@ describe('PaintCan', function(){
   let paintCan2;
 
   beforeEach(function (){
-    paintCan1 = new PaintCan(2);
-    paintCan2 = new PaintCan(0);
+    paintCan1 = new PaintCan();
+    paintCan2 = new PaintCan();
   })
 
   it('has paint', function(){
@@ -18,6 +18,7 @@ describe('PaintCan', function(){
   })
 
   it('should check if it is empty', function(){
+    paintCan2.emptyPaintCan();
     const expected = true;
     const actual = paintCan2.checkIfEmpty();
     assert.strictEqual(actual, expected);

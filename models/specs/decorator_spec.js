@@ -8,14 +8,14 @@ describe('Decorator', function(){
 
   let decorator;
   let paintCan1;
-  let paintCan2
+  let paintCan2;
   let room;
 
   beforeEach(function(){
     decorator = new Decorator()
-    paintCan1 = new PaintCan(5)
-    paintCan2 = new PaintCan(3)
-    room = new Room(7)
+    paintCan1 = new PaintCan()
+    paintCan2 = new PaintCan()
+    room = new Room(4)
   })
 
   it('should start with no paint cans', function(){
@@ -33,7 +33,7 @@ describe('Decorator', function(){
     decorator.addPaintCan(paintCan1);
     decorator.addPaintCan(paintCan2);
     actual = decorator.checkStockLitres();
-    assert.strictEqual(actual, 8);
+    assert.strictEqual(actual, 4);
   })
 
   it('should be able to calculate if they have enough paint for a room', function(){
@@ -48,7 +48,7 @@ describe('Decorator', function(){
     decorator.addPaintCan(paintCan2);
     decorator.paintRoom(room)
     actual = room.paintedArea
-    assert.strictEqual(actual, 7);
+    assert.strictEqual(actual, 4);
   })
 
   it('should not be able to paint with not enough paint', function(){

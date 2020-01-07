@@ -1,5 +1,5 @@
-const PaintCan = function(litres){
-  this.litres = litres
+const PaintCan = function(){
+  this.litres = 2
 };
 
 PaintCan.prototype.checkIfEmpty = function () {
